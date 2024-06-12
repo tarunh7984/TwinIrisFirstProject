@@ -5,8 +5,8 @@ import { AnyBulkWriteOperation, Document } from 'mongodb';
 
 /**
  * Stores plant data in MongoDB.
- * @param plantsData - The plants info to store.
- * @returns A Promise that resolves when the plants info are stored successfully.
+ * @param priceData - The price info to store.
+ * @returns A Promise that resolves when the price info are stored successfully.
  */
 //async function storeBasicPriceData(plantsData: any[]): Promise<void> {
 try {
@@ -16,11 +16,10 @@ const collection = database.collection("prices");
 
 // Bulk write upsert operations
 var operations: AnyBulkWriteOperation<Document>[] = [];
-
-plantsData.forEach((plantData: any) => {
-    const updateFilter = { id: plantData.id }
+priceData.forEach((priceData: any) => {
+    const updateFilter = { id: priceData.id }
     const updateDoc = {
-    $set: plantData,
+    $set: priceData,
     $setOnInsert: { created_at: new Date() }
     };
     operations.push({
