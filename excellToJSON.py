@@ -18,7 +18,7 @@ for item in json_result:
             "Unit": unit,
             "Size": size,
             "currency": currency,
-            "MonthlyPrices": monthly_prices,
+            "MonthlyPrices": monthly_prices
             #"YearlyAverage": yearly_average
    }
     })
